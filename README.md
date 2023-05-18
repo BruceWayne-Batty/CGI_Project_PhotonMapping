@@ -5,8 +5,7 @@ Repository for CGI project
 
 Currently a skeleton of photon emission and tracing is built. The light source is a point light source beneath the center of the roof. 5000 photons are emitted in random direction. Only reflection and diffusion are considered for now, each with 50% probability to happen. The maximum numbers of iterations of both reflection and diffusion are 10. A result is shown below.
 
-<img src="C:\Users\Karl Zhang\Desktop\DH2323\new project\CGI_Project_PhotonMapping\project\Debug\screenshot.bmp" alt="screenshot" style="zoom:80%;" />
-
+![screenshot](https://github.com/BruceWayne-Batty/CGI_Project_PhotonMapping/assets/128699437/5da9b2e1-aea6-4f19-9a69-5f2b9e1c3142)
 
 
 Currently, storing photons vector to a kDTree gives errors. The test code of kDTree is commented in skeletonSDL2.cpp.
