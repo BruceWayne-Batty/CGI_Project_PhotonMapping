@@ -30,6 +30,9 @@ vec3 c3(0.0f, 0.0f, 1.0f);
 mat3 R(c1, c2, c3);
 
 // ----------------------------------------------------------------------------
+// STRUCTURES
+
+// ----------------------------------------------------------------------------
 // FUNCTIONS
 
 void Update(void);
@@ -52,20 +55,20 @@ int main( int argc, char* argv[] )
 		std::cout << "(" << element.direction.x << ", " << element.direction.y << ", " << element.direction.z << ")" << std::endl;
 	}
 
-	///* Test for kDtree. */
-	//Photon test(vec3(0, 0, 0), vec3(1, 1, 1));
-	///* Generate photonMap. */
-	//kdt::KDTree<Photon> photonMap(photons);
-	///* Nearest neighbour. */
-	//int idx = photonMap.nnSearch(test);
-	//cout << "Nearest neighbour is (" << photons[idx].position.x << ", " << photons[idx].position.y << ", " << photons[idx].position.z << ")" << endl;
-	///* K nearest neighbour. */
-	//int k = 5;
-	//vector<int> knn = photonMap.knnSearch(test, k);
-	//for (int i = 0; i < knn.size(); ++i)
-	//{
-	//	cout << "The " << i << " neighbour is (" << photons[knn[i]].position.x << ", " << photons[knn[i]].position.y << ", " << photons[knn[i]].position.z << ")" << endl;
-	//}
+	/* Test for kDtree. */
+	Photon test(vec3(0, 0, 0), vec3(1, 1, 1));
+	/* Save photons vector to photonMap. */
+	kdt::KDTree<Photon> photonMap(photons);
+	/* Nearest neighbour. */
+	int idx = photonMap.nnSearch(test);
+	cout << "Nearest neighbour is (" << photons[idx].position.x << ", " << photons[idx].position.y << ", " << photons[idx].position.z << ")" << endl;
+	/* K nearest neighbour. */
+	int k = 5;
+	vector<int> knn = photonMap.knnSearch(test, k);
+	for (int i = 0; i < knn.size(); ++i)
+	{
+		cout << "The " << i << " neighbour is (" << photons[knn[i]].position.x << ", " << photons[knn[i]].position.y << ", " << photons[knn[i]].position.z << ")" << endl;
+	}
 
 	while (!sdlAux->quitEvent())
 	{

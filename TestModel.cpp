@@ -1,4 +1,5 @@
 #include "TestModel.h"
+#include <iostream>
 
 const float MAX_VALUE = numeric_limits<float>::max();
 
@@ -6,6 +7,22 @@ Photon::Photon(glm::vec3 pos, glm::vec3 dir)
 {
 	position = pos;
 	direction = glm::normalize(dir);
+}
+
+float Photon::operator[](int index) const {
+	if (index == 0) {
+		return position.x;
+	}
+	else if (index == 1) {
+		return position.y;
+	}
+	else if (index == 2) {
+		return position.z;
+	}
+	else {
+		std::cout << "axis is not 0 or 1 or 2" << std::endl;
+		return 0.0f;
+	}
 }
 
 Intersection::Intersection(glm::vec3 pos, float dis, int triIndex)

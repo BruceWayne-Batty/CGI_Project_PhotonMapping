@@ -15,10 +15,14 @@ extern const float MAX_VALUE;
 class Photon
 {
 public:
+	static const int DIM = 3;
+
 	glm::vec3 position;
 	glm::vec3 direction;
 
 	Photon(glm::vec3 pos, glm::vec3 dir);
+
+	float operator[](int index) const;
 };
 
 // Used to describe an intersection:
