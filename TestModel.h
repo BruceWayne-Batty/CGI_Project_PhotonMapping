@@ -26,6 +26,7 @@ public:
 };
 
 // Used to describe an intersection:
+
 class Intersection
 {
 public:
@@ -35,6 +36,7 @@ public:
 
 	Intersection(glm::vec3 pos, float dis, int triIndex);
 };
+
 
 // Used to describe a triangular surface:
 class Triangle
@@ -52,12 +54,14 @@ public:
 };
 
 // From lab2.
+
 bool ClosestIntersection(
 	vec3 start,
 	vec3 dir,
 	const vector<Triangle>& triangles,
 	Intersection& closestIntersection
 );
+
 
 // Loads the Cornell Box. It is scaled to fill the volume:
 // -1 <= x <= +1
