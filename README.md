@@ -12,3 +12,7 @@ Currently, storing photons vector to a kDTree gives errors. The test code of kDT
 #### 5.18 Updated
 
 Fixed the issue with storing photons vector in the kDTree. By implementing the subscript operator overloading for the Photon class, it now allows direct access to the position attributes （`position.x`, `position.y`, `position.z`）of a Photon object through subscript indices.
+
+#### 3.27 Updated
+
+Add calculation of irradiance. Now illuminated with photon mapping and raytracing. Total irradiance of each hit point is calculated by using radius search from KD-tree.
